@@ -20,37 +20,41 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const locomotiveScrollRef = useRef<LocomotiveScroll | null>(null);
 
   useEffect(() => {
-    // Initialize Locomotive Scroll
+    // Initialize Locomotive Scroll with optimized settings for faster, more comfortable scrolling
     locomotiveScrollRef.current = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]') as HTMLElement,
       smooth: true,
-      lerp: 0.1,
-      multiplier: 0.8,
+      // Faster, more responsive scrolling (lower lerp = faster)
+      lerp: 0.05,
+      // Higher multiplier for more responsive feel
+      multiplier: 1.2,
       // Enable snap scrolling to sections
       scrollFromAnywhere: true,
       // Snap to sections
       snap: true,
-      // Snap duration
-      snapDuration: 1.2,
-      // Snap easing
+      // Faster snap duration for quicker section transitions
+      snapDuration: 0.8,
+      // Smoother snap easing
       snapEasing: [0.25, 0.1, 0.25, 1],
+      // Optimized smartphone settings
       smartphone: {
         smooth: true,
-        lerp: 0.1,
-        multiplier: 0.8,
+        lerp: 0.05,
+        multiplier: 1.2,
         snap: true,
-        snapDuration: 1.2,
+        snapDuration: 0.8,
       },
+      // Optimized tablet settings
       tablet: {
         smooth: true,
-        lerp: 0.1,
-        multiplier: 0.8,
+        lerp: 0.05,
+        multiplier: 1.2,
         snap: true,
-        snapDuration: 1.2,
+        snapDuration: 0.8,
       },
     });
 
-    // Add keyboard navigation
+    // Add keyboard navigation with faster transitions
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!locomotiveScrollRef.current) return;
       
@@ -65,7 +69,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
           e.preventDefault();
           const nextSection = Math.min(currentSection + 1, Math.floor(document.body.scrollHeight / windowHeight) - 1);
           locomotiveScrollRef.current.scrollTo(nextSection * windowHeight, {
-            duration: 1.2,
+            duration: 0.8,
             easing: [0.25, 0.1, 0.25, 1],
           });
           break;
@@ -74,21 +78,21 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
           e.preventDefault();
           const prevSection = Math.max(currentSection - 1, 0);
           locomotiveScrollRef.current.scrollTo(prevSection * windowHeight, {
-            duration: 1.2,
+            duration: 0.8,
             easing: [0.25, 0.1, 0.25, 1],
           });
           break;
         case 'Home':
           e.preventDefault();
           locomotiveScrollRef.current.scrollTo(0, {
-            duration: 1.2,
+            duration: 0.8,
             easing: [0.25, 0.1, 0.25, 1],
           });
           break;
         case 'End':
           e.preventDefault();
           locomotiveScrollRef.current.scrollTo(document.body.scrollHeight - windowHeight, {
-            duration: 1.2,
+            duration: 0.8,
             easing: [0.25, 0.1, 0.25, 1],
           });
           break;

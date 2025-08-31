@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { AnimatedLogo } from "./components/AnimatedLogo";
@@ -13,6 +13,7 @@ import { SmoothScrollProvider } from "./components/SmoothScrollContext";
 import { SectionNavigation } from "./components/SectionNavigation";
 import { Logo } from "./components/Logo";
 import { storyData, sectionNames, sectionDividers } from "./constants";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -100,6 +101,12 @@ export default function App() {
                 title={section.title}
                 backgroundImage={section.backgroundImage}
                 index={index}
+                soundcloudTrack={section.soundcloudTrack}
+                trackTitle={section.trackTitle}
+                artist={section.artist}
+                duration={section.duration}
+                trackUrl={section.trackUrl}
+                artistUrl={section.artistUrl}
               />
             ))}
 
@@ -168,6 +175,9 @@ export default function App() {
 
       {/* Toast notifications */}
       <Toaster />
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 }

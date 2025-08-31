@@ -44,7 +44,7 @@ export function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2.5 }}
+          transition={{ duration: 1 }}
           className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-black text-white mb-6 leading-tight tracking-tight"
           style={{ fontFamily: "'Space Grotesk', 'Inter', sans-serif" }}
         >
@@ -57,7 +57,7 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 3.2 }}
+          transition={{ duration: 0.8 }}
           className="mb-6"
         >
           <motion.p
@@ -81,7 +81,7 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 2.8 }}
+          transition={{ duration: 1 }}
           className="mb-8 relative"
         >
           <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto relative overflow-hidden rounded-full border-2 border-[#00FF85]/30 backdrop-blur-sm">
@@ -106,7 +106,7 @@ export function HeroSection() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 3 }}
+          transition={{ duration: 0.8 }}
           className="text-lg sm:text-xl lg:text-2xl font-medium text-white/90 max-w-2xl mx-auto"
         >
           Minimal. Futuristic. Pure Energy.

@@ -1,0 +1,10 @@
+f498d9a - Refactor: Add snap scroll effects and make page brighter - Remove dark overlays and backgrounds - Add CSS scroll-snap properties - Update all sections with lighter colors - Implement background image autoslider - Clean up unnecessary components and imports
+7de8c09 - ✨ Add comprehensive glow effects and refactor brightness system - Enhanced HeroSection with floating glow orbs and neon effects - Added ambient glow backgrounds to all sections - Enhanced StorySection, ServicesSection, and TestimonialsSection with glow effects - Removed problematic brightness filters and replaced with proper glow overlays - Added floating animated orbs throughout the page for depth and movement - Improved visual hierarchy with enhanced drop shadows and glows - Unified futuristic design across all sections
+1728d4f - fix: make header fully visible on all screen sizes with responsive navigation and CTA button
+cb2dd60 - feat: add glassmorphic header with animated navigation and enhanced section animations
+e3b23e0 - fix: resolve scrollToSection reference error with proper function definitions and useCallback
+1d042cd - feat: implement enhanced section scroll snapping with improved navigation and smooth transitions
+78970c1 - feat: enhance hero section with modern TV background, auto-sliding videos, and futuristic UI elements
+9fc9b00 - config
+a0e5b20 - fix: update GitHub Actions workflow to use modern deploy-pages action
+59c56d1 - refactor: extract constants and Logo component, make README minimalistic
