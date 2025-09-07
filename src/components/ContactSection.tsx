@@ -5,7 +5,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { MessageCircle, Send } from "lucide-react";
 import { FormSuccessAnimation } from "./FormSuccessAnimation";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 export function ContactSection() {
   const ref = useRef(null);

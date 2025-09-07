@@ -297,39 +297,6 @@ html.has-scroll-smooth {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for smooth scrolling */
-.c-scrollbar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 11px;
-  height: 100vh;
-  transform-origin: center right;
-  transition: transform 0.3s, opacity 0.3s;
-  opacity: 0;
-}
-
-.c-scrollbar:hover {
-  transform: scaleX(1.45);
-}
-
-.c-scrollbar_thumb {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #00FF85;
-  opacity: 0.5;
-  width: 7px;
-  border-radius: 10px;
-  margin: 2px;
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-.has-scroll-dragging .c-scrollbar_thumb {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
-}
 
 /* Section navigation styles */
 .section-nav-dot {

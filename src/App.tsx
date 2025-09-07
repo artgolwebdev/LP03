@@ -85,93 +85,66 @@ export default function App() {
       <AnimatePresence>
         {showContent && (
           <SmoothScrollProvider>
-            <motion.main
-              data-scroll-container
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-            {/* Hero Section */}
-            <HeroSection />
+            <>
+              <motion.main
+                data-scroll-container
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+              {/* Hero Section */}
+              <HeroSection />
 
-            {/* Story Sections */}
-            {storyData.map((section, index) => (
-              <StorySection
-                key={section.title}
-                title={section.title}
-                backgroundImage={section.backgroundImage}
-                index={index}
-                soundcloudTrack={section.soundcloudTrack}
-                trackTitle={section.trackTitle}
-                artist={section.artist}
-                duration={section.duration}
-                trackUrl={section.trackUrl}
-                artistUrl={section.artistUrl}
+              {/* Story Sections */}
+              {storyData.map((section, index) => (
+                <StorySection
+                  key={section.title}
+                  title={section.title}
+                  backgroundImage={section.backgroundImage}
+                  index={index}
+                  soundcloudTrack={section.soundcloudTrack}
+                  trackTitle={section.trackTitle}
+                  artist={section.artist}
+                  duration={section.duration}
+                  trackUrl={section.trackUrl}
+                  artistUrl={section.artistUrl}
+                />
+              ))}
+
+              {/* Section Divider */}
+              <SectionDivider 
+                imageUrl={sectionDividers[0].imageUrl}
+                alt={sectionDividers[0].alt}
               />
-            ))}
 
-            {/* Section Divider */}
-            <SectionDivider 
-              imageUrl={sectionDividers[0].imageUrl}
-              alt={sectionDividers[0].alt}
-            />
+              {/* Services Section */}
+              <ServicesSection />
 
-            {/* Services Section */}
-            <ServicesSection />
+              {/* Section Divider */}
+              <SectionDivider 
+                imageUrl={sectionDividers[1].imageUrl}
+                alt={sectionDividers[1].alt}
+              />
 
-            {/* Section Divider */}
-            <SectionDivider 
-              imageUrl={sectionDividers[1].imageUrl}
-              alt={sectionDividers[1].alt}
-            />
+              {/* Testimonials Section */}
+              <TestimonialsSection />
 
-            {/* Testimonials Section */}
-            <TestimonialsSection />
+              {/* Section Divider */}
+              <SectionDivider 
+                imageUrl={sectionDividers[2].imageUrl}
+                alt={sectionDividers[2].alt}
+              />
 
-            {/* Section Divider */}
-            <SectionDivider 
-              imageUrl={sectionDividers[2].imageUrl}
-              alt={sectionDividers[2].alt}
-            />
-
-            {/* Contact Section */}
-            <ContactSection />
-            </motion.main>
-            
-            {/* Section Navigation */}
-            <SectionNavigation sections={sectionNames} />
+              {/* Contact Section */}
+              <ContactSection />
+              </motion.main>
+              
+              {/* Section Navigation */}
+              <SectionNavigation sections={sectionNames} />
+            </>
           </SmoothScrollProvider>
         )}
       </AnimatePresence>
-
-      {/* Custom CSS for smooth scrolling */}
-      <style jsx>{`
-        html {
-          scroll-behavior: smooth;
-        }
-        
-        body {
-          font-family: 'Space Grotesk', 'Inter', sans-serif;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.5);
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: #00FF85;
-          border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: rgba(0, 255, 133, 0.8);
-        }
-      `}</style>
 
       {/* Toast notifications */}
       <Toaster />
